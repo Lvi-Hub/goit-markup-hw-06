@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Work 2</title>
+    <title>Home Work 6</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
         rel="stylesheet">
@@ -67,6 +67,54 @@
                                 <use href="./images/icons.svg#icon-close"> </use>
                             </svg>
                         </button>
+                        <h2 class="modal-title">Залиште свої дані, ми вам передзвонимо</h2>
+                        <form class="modal-form js-speaker-form" name="signup_form" autocomplete="on" novalidate>
+
+                            <label class="input-field">
+                                <span class="input-name">Ім'я</span>
+                                <input class="input-text" type="text" name="username" autofocus placeholder=" " />
+                                <span class="input-icon">
+                                    <svg width="18" height="18">
+                                        <use href="./images/icons.svg#icon-person"> </use>
+                                </span>
+                            </label>
+
+                            <label class="input-field">
+                                <span class="input-name"> Телефон </span>
+                                <input class="input-text" type="tel" name="phone-number" placeholder=" " />
+
+                                <span class="input-icon">
+                                    <svg width="18" height="18">
+                                        <use href="./images/icons.svg#icon-phone"> </use>
+                                </span>
+                            </label>
+
+                            <label class="input-field">
+                                <span class="input-name">Пошта</span>
+                                <input class="input-text" type="email" name="email" placeholder=" " />
+                                <span class="input-icon">
+                                    <svg width="18" height="18">
+                                        <use href="./images/icons.svg#icon-email"> </use>
+                                </span>
+                            </label>
+
+                            <label class="input-field">
+                                <span class="input-name">Коментар</span>
+                                <textarea class="input-feetback" name="feedback" placeholder="Введіть текст"></textarea>
+                            </label>
+
+                            <div>
+                                <label class="input-field">
+                                    <input class="checkbox" type="checkbox" name="License" value="License" id="License">
+                                    <span class="checkbox-icon"></span>
+                                    <span class="checkbox-text">Погоджуюся з розсилкою та приймаю <a
+                                            class="checkbox-link link" href="">Умови договору</a> </span>
+
+                                </label>
+                            </div>
+
+                            <button class="button-submit" type="submit">Submit</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -384,8 +432,39 @@
                     </li>
                 </ul>
             </div>
+            <div class="subscribe">
+                <h2 class="subscribe-title">Підпишіться на розсилку</h2>
+
+                <div class="subscribe-input-field">
+                    <!-- <span class="input-name">Пошта</span> -->
+                    <input class="subscribe-input-text" type="email" name="email" placeholder="email" />
+                    <div class="qwert">
+                        <button class="footer-btn" type="submit">Підписатися <svg class="subscribe-icon" width="24"
+                                height="24">
+                                <use href="./images/icons.svg#icon-icon-send-1"> </use></button>
+                        <!-- <svg class="subscribe-icon" width="24" height="24">
+                            <use href="./images/icons.svg#icon-icon-send-1"> </use> -->
+                    </div>
+                </div>
+            </div>
+
         </div>
     </footer>
+    <script>
+        (() => {
+            document
+                .querySelector('.js-speaker-form')
+                .addEventListener('submit', e => {
+                    e.preventDefault();
+
+                    new FormData(e.currentTarget).forEach((value, name) =>
+                        console.log(`${name}: ${value}`),
+                    );
+
+                    e.currentTarget.reset();
+                });
+        })();
+    </script>
     <script src="./js/modal.js"></script>
 </body>
 
